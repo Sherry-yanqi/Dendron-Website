@@ -1,0 +1,33 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.decorateReference = void 0;
+const common_all_1 = require("@dendronhq/common-all");
+const wikilinks_1 = require("./wikilinks");
+const decorateReference = async (opts) => {
+    var _a, _b;
+    const { node: reference, engine, note, config } = opts;
+    const { position } = reference;
+    const { errors, noteMeta, type } = await (0, wikilinks_1.linkedNoteType)({
+        fname: reference.data.link.from.fname,
+        anchorStart: reference.data.link.data.anchorStart,
+        anchorEnd: reference.data.link.data.anchorEnd,
+        vaultName: reference.data.link.data.vaultName,
+        engine,
+        note,
+        vaults: (_b = (_a = config.workspace) === null || _a === void 0 ? void 0 : _a.vaults) !== null && _b !== void 0 ? _b : [],
+    });
+    const decorationType = type === common_all_1.DECORATION_TYPES.brokenWikilink
+        ? common_all_1.DECORATION_TYPES.brokenNoteRef
+        : common_all_1.DECORATION_TYPES.noteRef;
+    const decoration = {
+        type: decorationType,
+        range: (0, common_all_1.position2VSCodeRange)(position),
+        data: {
+            link: reference.data.link,
+            noteMeta,
+        },
+    };
+    return { errors, decorations: [decoration] };
+};
+exports.decorateReference = decorateReference;
+//# sourceMappingURL=references.js.map

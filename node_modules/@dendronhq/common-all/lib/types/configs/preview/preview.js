@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.genDefaultPreviewConfig = void 0;
+/**
+ * Generate defaults for {@link DendronPreviewConfig}
+ * @returns DendronPreviewConfig
+ */
+function genDefaultPreviewConfig() {
+    return {
+        enableFMTitle: true,
+        enableNoteTitleForLink: true,
+        enableFrontmatterTags: true,
+        enableHashesForFMTags: false,
+        enablePrettyRefs: true,
+        enableKatex: true,
+        automaticallyShowPreview: false,
+    };
+}
+exports.genDefaultPreviewConfig = genDefaultPreviewConfig;
+//# sourceMappingURL=preview.js.map
