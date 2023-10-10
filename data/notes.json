@@ -1,0 +1,923 @@
+{
+  "notes": {
+    "403": {
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "fname": "403",
+      "id": "403",
+      "title": "This page has not yet sprouted",
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1696931829151,
+      "created": 1696931829151,
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": null,
+      "data": {}
+    },
+    "root": {
+      "id": "root",
+      "title": "root",
+      "desc": "",
+      "updated": 1605266684036,
+      "created": 1595961348801,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "uxohjdz88o8hep8cr7hffz8",
+        "kl9mhirw795hadbnwlddcfi",
+        "0dedulbxl7totmeo56j36ao",
+        "c1bs7wsjfbhb0zipaywqv1",
+        "90k77c0ismmit0y8v4lmv1e"
+      ],
+      "parent": null,
+      "data": {}
+    },
+    "90k77c0ismmit0y8v4lmv1e": {
+      "fname": "tags",
+      "stub": true,
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "schemaStub": false,
+      "type": "note",
+      "updated": 1696931828747,
+      "created": 1696931828747,
+      "id": "90k77c0ismmit0y8v4lmv1e",
+      "desc": "",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "3i91cpobhjev7je13stn8d0",
+        "42zffac1p84lafg193w2g6u",
+        "0liorsjk4fxvyj22kj99uyx",
+        "qtrfzf049hbfnae914162x4"
+      ],
+      "parent": "root",
+      "data": {},
+      "title": "Tags"
+    },
+    "qtrfzf049hbfnae914162x4": {
+      "id": "qtrfzf049hbfnae914162x4",
+      "title": "编译器",
+      "desc": "",
+      "updated": 1696757511287,
+      "created": 1696756191696,
+      "custom": {},
+      "fname": "tags.编译器",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "2d1dcfefb35b08f727c163df93f41e77",
+      "links": [
+        {
+          "from": {
+            "fname": "tags.ROCm学习",
+            "id": "3i91cpobhjev7je13stn8d0",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 1,
+              "offset": 1369
+            },
+            "end": {
+              "line": 29,
+              "column": 5,
+              "offset": 1373
+            },
+            "indent": []
+          },
+          "value": "tags.编译器"
+        }
+      ],
+      "anchors": {
+        "gcc": {
+          "type": "header",
+          "text": "GCC",
+          "value": "gcc",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "llvm架构": {
+          "type": "header",
+          "text": "LLVM架构",
+          "value": "llvm架构",
+          "line": 10,
+          "column": 0,
+          "depth": 1
+        },
+        "什么是clang": {
+          "type": "header",
+          "text": "什么是Clang",
+          "value": "什么是clang",
+          "line": 18,
+          "column": 0,
+          "depth": 1
+        },
+        "clang和llvm": {
+          "type": "header",
+          "text": "Clang和LLVM",
+          "value": "clang和llvm",
+          "line": 27,
+          "column": 0,
+          "depth": 1
+        },
+        "clang和gcc的区别": {
+          "type": "header",
+          "text": "Clang和GCC的区别",
+          "value": "clang和gcc的区别",
+          "line": 35,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "90k77c0ismmit0y8v4lmv1e",
+      "data": {}
+    },
+    "0liorsjk4fxvyj22kj99uyx": {
+      "id": "0liorsjk4fxvyj22kj99uyx",
+      "title": "工作说明",
+      "desc": "",
+      "updated": 1696909320884,
+      "created": 1695366403489,
+      "custom": {},
+      "fname": "tags.工作说明",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d4b2717c6dbf7c5777ca8dd5775f711c",
+      "links": [
+        {
+          "from": {
+            "fname": "rocm",
+            "id": "0dedulbxl7totmeo56j36ao",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 6,
+              "offset": 5
+            },
+            "indent": []
+          },
+          "value": "tags.工作说明"
+        }
+      ],
+      "anchors": {
+        "环境": {
+          "type": "header",
+          "text": "环境",
+          "value": "环境",
+          "line": 8,
+          "column": 0,
+          "depth": 2
+        },
+        "目标": {
+          "type": "header",
+          "text": "目标",
+          "value": "目标",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "安装": {
+          "type": "header",
+          "text": "安装",
+          "value": "安装",
+          "line": 20,
+          "column": 0,
+          "depth": 2
+        },
+        "注意": {
+          "type": "header",
+          "text": "注意",
+          "value": "注意",
+          "line": 21,
+          "column": 0,
+          "depth": 3
+        },
+        "安装选择": {
+          "type": "header",
+          "text": "安装选择",
+          "value": "安装选择",
+          "line": 29,
+          "column": 0,
+          "depth": 3
+        },
+        "安装过程": {
+          "type": "header",
+          "text": "安装过程",
+          "value": "安装过程",
+          "line": 52,
+          "column": 0,
+          "depth": 3
+        }
+      },
+      "children": [],
+      "parent": "90k77c0ismmit0y8v4lmv1e",
+      "data": {}
+    },
+    "42zffac1p84lafg193w2g6u": {
+      "id": "42zffac1p84lafg193w2g6u",
+      "title": "Gem5学习",
+      "desc": "",
+      "updated": 1696904168539,
+      "created": 1695368027815,
+      "custom": {},
+      "fname": "tags.gem5学习",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "69b923d71693f3375d67912f2a86d863",
+      "links": [
+        {
+          "from": {
+            "fname": "rocm",
+            "id": "0dedulbxl7totmeo56j36ao",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 14
+            },
+            "end": {
+              "line": 3,
+              "column": 8,
+              "offset": 21
+            },
+            "indent": []
+          },
+          "value": "tags.gem5学习"
+        }
+      ],
+      "anchors": {
+        "memory-system": {
+          "type": "header",
+          "text": "Memory system",
+          "value": "memory-system",
+          "line": 8,
+          "column": 0,
+          "depth": 1
+        },
+        "设计目标": {
+          "type": "header",
+          "text": "设计目标",
+          "value": "设计目标",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "组件": {
+          "type": "header",
+          "text": "组件",
+          "value": "组件",
+          "line": 11,
+          "column": 0,
+          "depth": 2
+        },
+        "ports": {
+          "type": "header",
+          "text": "Ports",
+          "value": "ports",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "memory-system-modes": {
+          "type": "header",
+          "text": "Memory system modes",
+          "value": "memory-system-modes",
+          "line": 16,
+          "column": 0,
+          "depth": 4
+        },
+        "port": {
+          "type": "header",
+          "text": "Port",
+          "value": "port",
+          "line": 20,
+          "column": 0,
+          "depth": 4
+        }
+      },
+      "children": [],
+      "parent": "90k77c0ismmit0y8v4lmv1e",
+      "data": {}
+    },
+    "3i91cpobhjev7je13stn8d0": {
+      "id": "3i91cpobhjev7je13stn8d0",
+      "title": "ROCm学习",
+      "desc": "",
+      "updated": 1696769251535,
+      "created": 1695367080849,
+      "custom": {},
+      "fname": "tags.ROCm学习",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "5f93d1f8dbf1730c63a42bb364ccd010",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tags.ROCm学习",
+            "id": "3i91cpobhjev7je13stn8d0",
+            "vaultName": "Dendron"
+          },
+          "value": "tags.编译器",
+          "alias": "#编译器",
+          "position": {
+            "start": {
+              "line": 29,
+              "column": 1,
+              "offset": 1369
+            },
+            "end": {
+              "line": 29,
+              "column": 5,
+              "offset": 1373
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "tags.编译器"
+          }
+        },
+        {
+          "from": {
+            "fname": "rocm",
+            "id": "0dedulbxl7totmeo56j36ao",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 1,
+              "offset": 6
+            },
+            "end": {
+              "line": 2,
+              "column": 8,
+              "offset": 13
+            },
+            "indent": []
+          },
+          "value": "tags.ROCm学习"
+        }
+      ],
+      "anchors": {
+        "rocm简介": {
+          "type": "header",
+          "text": "ROCm简介",
+          "value": "rocm简介",
+          "line": 7,
+          "column": 0,
+          "depth": 1
+        },
+        "名词解释": {
+          "type": "header",
+          "text": "名词解释",
+          "value": "名词解释",
+          "line": 9,
+          "column": 0,
+          "depth": 2
+        },
+        "miopen": {
+          "type": "header",
+          "text": "MIOpen",
+          "value": "miopen",
+          "line": 10,
+          "column": 0,
+          "depth": 3
+        },
+        "hip": {
+          "type": "header",
+          "text": "HIP",
+          "value": "hip",
+          "line": 12,
+          "column": 0,
+          "depth": 3
+        },
+        "hsa": {
+          "type": "header",
+          "text": "HSA",
+          "value": "hsa",
+          "line": 14,
+          "column": 0,
+          "depth": 3
+        },
+        "gcn": {
+          "type": "header",
+          "text": "GCN",
+          "value": "gcn",
+          "line": 16,
+          "column": 0,
+          "depth": 3
+        },
+        "hip-clang": {
+          "type": "header",
+          "text": "hip-clang",
+          "value": "hip-clang",
+          "line": 18,
+          "column": 0,
+          "depth": 3
+        },
+        "aomp-amd-openmp-compiler": {
+          "type": "header",
+          "text": "AOMP (AMD OpenMP Compiler)",
+          "value": "aomp-amd-openmp-compiler",
+          "line": 26,
+          "column": 0,
+          "depth": 3
+        },
+        "opencl": {
+          "type": "header",
+          "text": "OpenCL",
+          "value": "opencl",
+          "line": 29,
+          "column": 0,
+          "depth": 3
+        },
+        "rocm-和-cuda对比": {
+          "type": "header",
+          "text": "ROCm 和 CUDA对比",
+          "value": "rocm-和-cuda对比",
+          "line": 39,
+          "column": 0,
+          "depth": 1
+        }
+      },
+      "children": [],
+      "parent": "90k77c0ismmit0y8v4lmv1e",
+      "data": {}
+    },
+    "c1bs7wsjfbhb0zipaywqv1": {
+      "id": "c1bs7wsjfbhb0zipaywqv1",
+      "title": "Tutorial",
+      "desc": "",
+      "updated": 1695095186651,
+      "created": 1654223767390,
+      "currentStep": 0,
+      "totalSteps": 0,
+      "custom": {
+        "currentStep": 0,
+        "totalSteps": 0
+      },
+      "fname": "tutorial",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "670a3148aca252ea4efa8135c327d8d0",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "value": "tutorial.one",
+          "position": {
+            "start": {
+              "line": 61,
+              "column": 9,
+              "offset": 2424
+            },
+            "end": {
+              "line": 61,
+              "column": 25,
+              "offset": 2440
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "tutorial.one"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "value": "tutorial",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 134,
+              "offset": 2762
+            },
+            "end": {
+              "line": 65,
+              "column": 146,
+              "offset": 2774
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "sameFile": false,
+          "to": {
+            "fname": "tutorial"
+          }
+        },
+        {
+          "from": {
+            "fname": "tutorial",
+            "id": "c1bs7wsjfbhb0zipaywqv1",
+            "vaultName": "Dendron"
+          },
+          "type": "backlink",
+          "position": {
+            "start": {
+              "line": 65,
+              "column": 134,
+              "offset": 2762
+            },
+            "end": {
+              "line": 65,
+              "column": 146,
+              "offset": 2774
+            },
+            "indent": []
+          },
+          "value": "tutorial"
+        }
+      ],
+      "anchors": {
+        "create-a-note": {
+          "type": "header",
+          "text": "Create a Note",
+          "value": "create-a-note",
+          "line": 14,
+          "column": 0,
+          "depth": 2
+        },
+        "find-a-note": {
+          "type": "header",
+          "text": "Find a Note",
+          "value": "find-a-note",
+          "line": 25,
+          "column": 0,
+          "depth": 2
+        },
+        "organize-your-notes": {
+          "type": "header",
+          "text": "Organize your Notes",
+          "value": "organize-your-notes",
+          "line": 36,
+          "column": 0,
+          "depth": 2
+        },
+        "create-a-link": {
+          "type": "header",
+          "text": "Create a link",
+          "value": "create-a-link",
+          "line": 47,
+          "column": 0,
+          "depth": 2
+        },
+        "navigate-a-link": {
+          "type": "header",
+          "text": "Navigate a link",
+          "value": "navigate-a-link",
+          "line": 59,
+          "column": 0,
+          "depth": 2
+        },
+        "refactor-a-note": {
+          "type": "header",
+          "text": "Refactor a Note",
+          "value": "refactor-a-note",
+          "line": 67,
+          "column": 0,
+          "depth": 2
+        },
+        "conclusion": {
+          "type": "header",
+          "text": "Conclusion",
+          "value": "conclusion",
+          "line": 76,
+          "column": 0,
+          "depth": 2
+        },
+        "next-steps": {
+          "type": "header",
+          "text": "Next Steps",
+          "value": "next-steps",
+          "line": 82,
+          "column": 0,
+          "depth": 2
+        },
+        "community": {
+          "type": "header",
+          "text": "Community",
+          "value": "community",
+          "line": 104,
+          "column": 0,
+          "depth": 2
+        }
+      },
+      "children": [],
+      "parent": "root",
+      "data": {}
+    },
+    "0dedulbxl7totmeo56j36ao": {
+      "id": "0dedulbxl7totmeo56j36ao",
+      "title": "Rocm",
+      "desc": "",
+      "updated": 1695368048885,
+      "created": 1693809888186,
+      "custom": {},
+      "fname": "rocm",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b69e6fc51fb3805ae8cee16bf4171afb",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "rocm",
+            "id": "0dedulbxl7totmeo56j36ao",
+            "vaultName": "Dendron"
+          },
+          "value": "tags.工作说明",
+          "alias": "#工作说明",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 6,
+              "offset": 5
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "tags.工作说明"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "rocm",
+            "id": "0dedulbxl7totmeo56j36ao",
+            "vaultName": "Dendron"
+          },
+          "value": "tags.ROCm学习",
+          "alias": "#ROCm学习",
+          "position": {
+            "start": {
+              "line": 2,
+              "column": 1,
+              "offset": 6
+            },
+            "end": {
+              "line": 2,
+              "column": 8,
+              "offset": 13
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "tags.ROCm学习"
+          }
+        },
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "rocm",
+            "id": "0dedulbxl7totmeo56j36ao",
+            "vaultName": "Dendron"
+          },
+          "value": "tags.gem5学习",
+          "alias": "#gem5学习",
+          "position": {
+            "start": {
+              "line": 3,
+              "column": 1,
+              "offset": 14
+            },
+            "end": {
+              "line": 3,
+              "column": 8,
+              "offset": 21
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "tags.gem5学习"
+          }
+        }
+      ],
+      "anchors": {},
+      "children": [],
+      "parent": "root",
+      "data": {}
+    },
+    "kl9mhirw795hadbnwlddcfi": {
+      "id": "kl9mhirw795hadbnwlddcfi",
+      "title": "Gem5",
+      "desc": "",
+      "updated": 1695103879760,
+      "created": 1695095113246,
+      "custom": {},
+      "fname": "gem5",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "d95656a524df5e30a5e1bd59efb62199",
+      "links": [],
+      "anchors": {},
+      "children": [],
+      "parent": "root",
+      "data": {}
+    },
+    "uxohjdz88o8hep8cr7hffz8": {
+      "id": "uxohjdz88o8hep8cr7hffz8",
+      "title": "CMAKE",
+      "desc": "",
+      "updated": 1693815618769,
+      "created": 1693815482097,
+      "custom": {},
+      "fname": "CMAKE",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "418ee4c407bb3c51c418b0b8fc440b64",
+      "links": [
+        {
+          "type": "wiki",
+          "from": {
+            "fname": "CMAKE",
+            "id": "uxohjdz88o8hep8cr7hffz8",
+            "vaultName": "Dendron"
+          },
+          "value": "tags.CMake",
+          "alias": "#CMake",
+          "position": {
+            "start": {
+              "line": 1,
+              "column": 1,
+              "offset": 0
+            },
+            "end": {
+              "line": 1,
+              "column": 7,
+              "offset": 6
+            },
+            "indent": []
+          },
+          "xvault": false,
+          "to": {
+            "fname": "tags.CMake"
+          }
+        }
+      ],
+      "anchors": {},
+      "children": [],
+      "parent": "root",
+      "data": {}
+    }
+  },
+  "domains": [
+    {
+      "id": "root",
+      "title": "root",
+      "desc": "",
+      "updated": 1605266684036,
+      "created": 1595961348801,
+      "custom": {
+        "nav_order": 0,
+        "permalink": "/"
+      },
+      "fname": "root",
+      "type": "note",
+      "vault": {
+        "fsPath": ".",
+        "selfContained": true,
+        "name": "Dendron"
+      },
+      "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+      "links": [],
+      "anchors": {},
+      "children": [
+        "uxohjdz88o8hep8cr7hffz8",
+        "kl9mhirw795hadbnwlddcfi",
+        "0dedulbxl7totmeo56j36ao",
+        "c1bs7wsjfbhb0zipaywqv1",
+        "90k77c0ismmit0y8v4lmv1e"
+      ],
+      "parent": null,
+      "data": {},
+      "body": "\nThis is the root for your Dendron vault.\n\nIf you decide to publish your entire vault, it will be your landing page. You are free to customize any part of this page except the frontmatter at the top, between the `---`.\n"
+    }
+  ],
+  "noteIndex": {
+    "id": "root",
+    "title": "root",
+    "desc": "",
+    "updated": 1605266684036,
+    "created": 1595961348801,
+    "custom": {
+      "nav_order": 0,
+      "permalink": "/"
+    },
+    "fname": "root",
+    "type": "note",
+    "vault": {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "Dendron"
+    },
+    "contentHash": "b49e7e13a0c91addc8ab9ef97080cf1e",
+    "links": [],
+    "anchors": {},
+    "children": [
+      "uxohjdz88o8hep8cr7hffz8",
+      "kl9mhirw795hadbnwlddcfi",
+      "0dedulbxl7totmeo56j36ao",
+      "c1bs7wsjfbhb0zipaywqv1",
+      "90k77c0ismmit0y8v4lmv1e"
+    ],
+    "parent": null,
+    "data": {},
+    "body": "\nThis is the root for your Dendron vault.\n\nIf you decide to publish your entire vault, it will be your landing page. You are free to customize any part of this page except the frontmatter at the top, between the `---`.\n"
+  },
+  "vaults": [
+    {
+      "fsPath": ".",
+      "selfContained": true,
+      "name": "Dendron"
+    }
+  ]
+}

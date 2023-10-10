@@ -1,0 +1,99 @@
+{
+  "roots": [
+    {
+      "key": "uxohjdz88o8hep8cr7hffz8",
+      "title": "CMAKE",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "Dendron",
+      "children": []
+    },
+    {
+      "key": "kl9mhirw795hadbnwlddcfi",
+      "title": "Gem5",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "Dendron",
+      "children": []
+    },
+    {
+      "key": "0dedulbxl7totmeo56j36ao",
+      "title": "Rocm",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "Dendron",
+      "children": []
+    },
+    {
+      "key": "90k77c0ismmit0y8v4lmv1e",
+      "title": "Tags",
+      "icon": "numberOutlined",
+      "hasTitleNumberOutlined": false,
+      "vaultName": "Dendron",
+      "children": [
+        {
+          "key": "3i91cpobhjev7je13stn8d0",
+          "title": "ROCm学习",
+          "icon": null,
+          "hasTitleNumberOutlined": true,
+          "vaultName": "Dendron",
+          "children": []
+        },
+        {
+          "key": "42zffac1p84lafg193w2g6u",
+          "title": "Gem5学习",
+          "icon": null,
+          "hasTitleNumberOutlined": true,
+          "vaultName": "Dendron",
+          "children": []
+        },
+        {
+          "key": "0liorsjk4fxvyj22kj99uyx",
+          "title": "工作说明",
+          "icon": null,
+          "hasTitleNumberOutlined": true,
+          "vaultName": "Dendron",
+          "children": []
+        },
+        {
+          "key": "qtrfzf049hbfnae914162x4",
+          "title": "编译器",
+          "icon": null,
+          "hasTitleNumberOutlined": true,
+          "vaultName": "Dendron",
+          "children": []
+        }
+      ]
+    },
+    {
+      "key": "c1bs7wsjfbhb0zipaywqv1",
+      "title": "Tutorial",
+      "icon": null,
+      "hasTitleNumberOutlined": false,
+      "vaultName": "Dendron",
+      "children": []
+    }
+  ],
+  "child2parent": {
+    "uxohjdz88o8hep8cr7hffz8": null,
+    "kl9mhirw795hadbnwlddcfi": null,
+    "0dedulbxl7totmeo56j36ao": null,
+    "90k77c0ismmit0y8v4lmv1e": null,
+    "3i91cpobhjev7je13stn8d0": "90k77c0ismmit0y8v4lmv1e",
+    "42zffac1p84lafg193w2g6u": "90k77c0ismmit0y8v4lmv1e",
+    "0liorsjk4fxvyj22kj99uyx": "90k77c0ismmit0y8v4lmv1e",
+    "qtrfzf049hbfnae914162x4": "90k77c0ismmit0y8v4lmv1e",
+    "c1bs7wsjfbhb0zipaywqv1": null
+  },
+  "notesLabelById": {
+    "uxohjdz88o8hep8cr7hffz8": "CMAKE",
+    "kl9mhirw795hadbnwlddcfi": "Gem5",
+    "0dedulbxl7totmeo56j36ao": "Rocm",
+    "90k77c0ismmit0y8v4lmv1e": "Tags",
+    "3i91cpobhjev7je13stn8d0": "ROCm学习",
+    "42zffac1p84lafg193w2g6u": "Gem5学习",
+    "0liorsjk4fxvyj22kj99uyx": "工作说明",
+    "qtrfzf049hbfnae914162x4": "编译器",
+    "c1bs7wsjfbhb0zipaywqv1": "Tutorial"
+  }
+}

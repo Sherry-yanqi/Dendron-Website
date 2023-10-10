@@ -1,0 +1,180 @@
+<h1 id="工作说明">工作说明<a aria-hidden="true" class="anchor-heading icon-link" href="#工作说明"></a></h1>
+<h2 id="环境">环境<a aria-hidden="true" class="anchor-heading icon-link" href="#环境"></a></h2>
+<h2 id="目标">目标<a aria-hidden="true" class="anchor-heading icon-link" href="#目标"></a></h2>
+<ul>
+<li>搭一个rockml的环境，运行pytorch模型</li>
+<li>在5.5服务器上运行gem5+rocm
+<ul>
+<li>搭建好http代理环境以及github下载环境</li>
+<li>编译gem5</li>
+<li>编译
+<ol>
+<li>Heterogeneous Compute Compiler (HCC)</li>
+<li>Radeon Open Compute runtime (ROCr)</li>
+<li>Radeon Open Compute thunk (ROCt)</li>
+<li>HIP</li>
+</ol>
+</li>
+<li>运行HIP_EXAMPLE 中的hello world</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装">安装<a aria-hidden="true" class="anchor-heading icon-link" href="#安装"></a></h2>
+<h3 id="注意">注意<a aria-hidden="true" class="anchor-heading icon-link" href="#注意"></a></h3>
+<ul>
+<li>
+<p>GCN3只能工作在system-call emulation (SE) mode，In particular, the emulated GPU driver supports the necessary ioctl() commands it receives from the userspace code. The source for the emulated GPU driver can be found in:</p>
+<ul>
+<li>The GPU compute driver: src/gpu-compute/gpu_compute_driver.[hh|cc]</li>
+<li>The HSA device driver: src/dev/hsa/hsa_driver.[hh|cc]</li>
+</ul>
+</li>
+<li>
+<p>The HSA driver code models the basic functionality for an HSA agent, which is any device that can be targeted by the HSA runtime and accepts Architected Query Language (AQL) packets. AQL packets are a standard format for all HSA agents, and are used primarily to initiate kernel launches on the GPU. The base HSADriver class holds a pointer to the HSA packet processor for the device, and defines the interface for any HSA device. An HSA agent does not have to be a GPU, it could be a generic accelerator, CPU, NIC, etc.
+The GPUComputeDriver derives from HSADriver and is a device-specific implementation of an HSADriver. It provides the implementation for GPU-specific ioctl() calls.</p>
+<p>  The src/dev/hsa/kfd_ioctl.h header must match the kfd_ioctl.h header that comes with ROCt. The emulated driver relies on that file to interpret the ioctl() codes the thunk uses.</p>
+</li>
+</ul>
+<h3 id="安装选择">安装选择<a aria-hidden="true" class="anchor-heading icon-link" href="#安装选择"></a></h3>
+<ul>
+<li><strong>在用户目录下安装依赖项</strong>
+<ul>
+<li>zlib      v1.3.01 源码安装</li>
+<li>sqlit3(需要在python安装前安装， 在python的configure命令，一定要添加-enable-loadable-sqlite-extensions，因为默认是不开启的)，v3.44.0 源码安装</li>
+<li>python3， v3.6.15  源码安装
+configure 时别忘了--enable-shared
+--prefix=$HOME/tools --enable-loadable-sqlite-extensions </li>
+<li>protobuf  v3.5.0  系统自带</li>
+<li>m4        v1.4.18  源码安装</li>
+<li>scons     v4.0.0  pip3安装，其他版本报错</li>
+<li>openmpi   v4.1.5 源码安装（boost的图形库需要，故安装）</li>
+<li>boost     v1.83.0    源码安装</li>
+<li>gem5 v23.0.1.0</li>
+</ul>
+</li>
+<li><strong> 选择ROCm version 4.0.0 </strong>
+<ul>
+<li>Heterogeneous Compute Compiler (HCC)</li>
+<li>Radeon Open Compute runtime (ROCr)</li>
+<li>Radeon Open Compute thunk (ROCt)</li>
+<li>HIP</li>
+</ul>
+</li>
+<li>pytorch v1.8.0
+<ul>
+<li>pip install torch -f <a href="https://download.pytorch.org/whl/rocm4.0.1/torch_stable.html">https://download.pytorch.org/whl/rocm4.0.1/torch_stable.html</a></li>
+<li>pip install ninja</li>
+<li>pip install 'git+<a href="https://github.com/pytorch/vision.git@v0.9.0&#x27;">https://github.com/pytorch/vision.git@v0.9.0'</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="安装过程">安装过程<a aria-hidden="true" class="anchor-heading icon-link" href="#安装过程"></a></h3>
+<ol>
+<li>
+<p>安装所需依赖</p>
+</li>
+<li>
+<p>安装所需要的python第三方包，gem5根目录下有requirement.txt</p>
+</li>
+<li>
+<p>gem5编译，编译（各个依赖版本）</p>
+</li>
+<li>
+<p>安装<a href="/mesahttps://github.com/Mesa3D/mesa.git">MESA</a></p>
+<ul>
+<li>
+<p>依赖macros:</p>
+<pre><code>//注意把安装位置，设置一下环境变量
+export ACLOCAL_PATH=$HOME/tools/share/aclocal
+</code></pre>
+</li>
+<li>
+<p><a href="https://gitlab.freedesktop.org/xorg/lib/libxshmfence/-/tree/master?ref_type=heads">https://gitlab.freedesktop.org/xorg/lib/libxshmfence/-/tree/master?ref_type=heads</a></p>
+</li>
+<li>
+<p>pip install Mako</p>
+</li>
+</ul>
+</li>
+<li>
+<p>安装llvm(git clone -b rocm-4.0.0 <a href="https://github.com/RadeonOpenCompute/llvm-project.git">https://github.com/RadeonOpenCompute/llvm-project.git</a>)</p>
+</li>
+<li>
+<p>安装HIP（注意安装hip依赖，mesa-common-dev，clang，comgr，rocm-dkms）</p>
+</li>
+<li>
+<p>下载hip-example，并调用其中的helloworld程序
+运行命令</p>
+</li>
+</ol>
+<pre class="language-shell"><code class="language-shell">build/GCN3_X86/gem5.opt configs/example/apu_se.py -n <span class="token number">3</span> -c ~/rocm-4.0.0/HIP-Examples/HIP-Examples-Applications/HelloWorld/HelloWorld
+</code></pre>
+<p>执行Hello world过程报错</p>
+<ul>
+<li>hip程序找不到libamd_comgr动态库
+原因是apu_se.py文件中重新设置了动态库路径，故不包含libamd_comgr动态库
+修改apu_se.py</li>
+</ul>
+<pre class="language-python"><code class="language-python">env <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'LD_LIBRARY_PATH=%s'</span> <span class="token operator">%</span> <span class="token string">':'</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'ROCM_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'HCC_HOME'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm/hcc'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'HSA_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm/hsa'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'HIP_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm/hip'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'ROCM_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/libhsakmt/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'ROCM_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/miopen/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'ROCM_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/miopengemm/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'ROCM_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/hipblas/lib'</span><span class="token punctuation">,</span>
+            os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'ROCM_PATH'</span><span class="token punctuation">,</span><span class="token string">'/opt/rocm'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'/rocblas/lib'</span><span class="token punctuation">,</span>
+            <span class="token string">"/usr/lib/x86_64-linux-gnu"</span><span class="token punctuation">,</span>
+            <span class="token string">"/home/lixianrui/tools/lib64"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'HOME=%s'</span> <span class="token operator">%</span> os<span class="token punctuation">.</span>getenv<span class="token punctuation">(</span><span class="token string">'HOME'</span><span class="token punctuation">,</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">"HSA_ENABLE_INTERRUPT=1"</span><span class="token punctuation">]</span>
+</code></pre>
+<ul>
+<li>报错，fatal: syscall getdents64 (#217) unimplemented.
+解决<a href="https://gem5-review.googlesource.com/c/public/gem5/+/46242"></a>
+报错request to allocate mask for invalid number: Invalid argument
+解决按照<a href="https://gem5-review.googlesource.com/c/public/gem5/+/46243"></a> 实现sched_getaffinity 系统调用</li>
+<li>fatal: system.cpu3.CUs0 does not have any port named gmTokenPort。本周已经解决，查找到原因是gmTokenPort系统调用未实现，查找gem5的提交记录，从新版中找到实现，修改代码调试程序中进行对程序进行跟踪，解决bug。
+错误解决<a href="https://gem5-review.googlesource.com/c/public/gem5/+/35096"></a></li>
+<li>request to allocate mask for invalid number: Invalid argument
+实现了sched_getaffinity 系统调用
+附带着学习了gdb使用，并用gdb工具跟踪gem5 debug程序。</li>
+<li>panic: Tried to read unmapped address 0x8
+首先查到这个错误是在/src/x86下，故是发生在了gem5里面</li>
+</ul>
+<pre class="language-shell"><code class="language-shell">执行命令：build/GCN3_X86/gem5.opt configs/example/apu_se.py  -c ~/rocm-4.0.0/HIP-Examples-rocm-4.0.0/HIP-Examples-Applications/FloydWarshall/FloydWarshall
+报错
+warn: ignoring syscall get_mempolicy<span class="token punctuation">(</span><span class="token punctuation">..</span>.<span class="token punctuation">)</span>
+panic: Tried to <span class="token builtin class-name">read</span> unmapped address 0x8.
+PC: 0x7ffff8013e08, Instr:   CALL_NEAR_M <span class="token builtin class-name">:</span> ld   t1, DS:<span class="token punctuation">[</span>rbx<span class="token punctuation">]</span>
+Memory Usage: <span class="token number">5724524</span> KBytes
+执行命令：build/GCN3_X86/gem5.opt configs/example/apu_se.py  -c ~/rocm-4.0.0/HIP-Examples-rocm-4.0.0/HIP-Examples-Applications/HelloWorld/HelloWorld
+报错
+warn: ignoring syscall get_mempolicy<span class="token punctuation">(</span><span class="token punctuation">..</span>.<span class="token punctuation">)</span>
+panic: Tried to <span class="token builtin class-name">read</span> unmapped address 0x8.
+PC: 0x7ffff8013e08, Instr:   CALL_NEAR_M <span class="token builtin class-name">:</span> ld   t1, DS:<span class="token punctuation">[</span>rbx<span class="token punctuation">]</span>
+执行命令：
+build/GCN3_X86/gem5.opt configs/example/apu_se.py  -c ~/rocm-4.0.0/HIP-Examples-rocm-4.0.0/HIP-Examples-Applications/SimpleConvolution/SimpleConvolution
+报错
+warn: ignoring syscall get_mempolicy<span class="token punctuation">(</span><span class="token punctuation">..</span>.<span class="token punctuation">)</span>
+panic: Tried to <span class="token builtin class-name">read</span> unmapped address 0x8.
+PC: 0x7ffff8013e08, Instr:   CALL_NEAR_M <span class="token builtin class-name">:</span> ld   t1, DS:<span class="token punctuation">[</span>rbx<span class="token punctuation">]</span>
+执行命令<span class="token variable">$build</span>/GCN3_X86/gem5.opt configs/example/apu_se.py  -c gem5-resources/src/gpu/square/bin/square
+报错：warn: ignoring syscall get_mempolicy<span class="token punctuation">(</span><span class="token punctuation">..</span>.<span class="token punctuation">)</span>
+info: Increasing stack size by one page.
+warn: instruction <span class="token string">'fcomi'</span> unimplemented
+panic: Tried to <span class="token builtin class-name">read</span> unmapped address 0x8.
+PC: 0x7ffff8013e08, Instr:   CALL_NEAR_M <span class="token builtin class-name">:</span> ld   t1, DS:<span class="token punctuation">[</span>rbx<span class="token punctuation">]</span>
+Memory Usage: <span class="token number">5741540</span> KBytes
+</code></pre>
+<p>根据warn: instruction 'fcomi' unimplemented查找有关提交，找到了<a href="https://gem5-review.googlesource.com/c/public/gem5/+/42443"></a>关于fcomi的相关提交，用strance记录gem5调用记录，发现在最后gem5确实有调用libstdc++，报错指令CALL_NEAR_M : ld   t1, DS:[rbx]定义在./src/arch/x86/isa/insts/general_purpose/control_transfer/call.py。猜测或许有关，比较玄学，结果证明无关
+###资料列表
+<a href="https://www.gem5.org/documentation/general_docs/gpu_models/GCN3">链接Documentation and Tutorials部分</a>
+<a href="http://repo.radeon.com/rocm/archive/">rocm仓库</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/notes/0dedulbxl7totmeo56j36ao">Rocm</a></li>
+</ul>
